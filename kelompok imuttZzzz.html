@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Hotel</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #fff0f5;
+        scroll-behavior: smooth;
+      }
+
+      /* HEADER */
+      header {
+        background-color: #ffe6f0;
+        border-bottom: 2px solid #f7b2d9;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .logo h2 {
+        margin: 0;
+        color: #d63384;
+      }
+
+      nav {
+        display: flex;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #d63384;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #b32d6c;
+      }
+
+      /* HAMBURGER */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: #d63384;
+        border-radius: 2px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        nav {
+          display: none;
+          flex-direction: column;
+          background-color: #ffe6f0;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          width: 200px;
+          padding: 10px;
+          border: 1px solid #f7b2d9;
+          border-radius: 5px;
+        }
+
+        nav.show {
+          display: flex;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .menu-toggle {
+          display: flex;
+        }
+      }
+
+      /* SECTION STYLE */
+      section {
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: auto;
+        background-color: white;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      section h2 {
+        text-align: center;
+        color: #d63384;
+        margin-bottom: 20px;
+      }
+
+      /* TABEL */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #f7b2d9;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #ffe6f0;
+        color: #d63384;
+      }
+
+      /* FORM */
+      form label {
+        font-weight: bold;
+        color: #d63384;
+        display: block;
+        margin-top: 10px;
+      }
+
+      form input,
+      form select,
+      form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #f7b2d9;
+        border-radius: 5px;
+      }
+
+      form button {
+        background-color: #d63384;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+
+      form button:hover {
+        background-color: #b32d6c;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
+          alt="Logo Kucing"
+        />
+        <h2>🐾 Pet Hotel</h2>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#harga">Harga/Kandang</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+          <li><a href="#pemilik">Nama Pemilik</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- BERANDA -->
+    <section id="beranda">
+      <h2>Selamat Datang di Pet Hotel</h2>
+      <p style="text-align: center">
+        Kami menyediakan layanan penitipan hewan yang aman, nyaman, dan penuh
+        kasih sayang. Dapatkan fasilitas terbaik untuk kucing, anjing, dan hewan
+        kesayangan lainnya.
+      </p>
+    </section>
+
+    <!-- HARGA -->
+    <section id="harga">
+      <h2>Harga & Kandang</h2>
+      <table>
+        <tr>
+          <th>Jenis Kandang</th>
+          <th>Fasilitas</th>
+          <th>Harga per Hari</th>
+        </tr>
+        <tr>
+          <td>Kandang Standar</td>
+          <td>Tempat tidur, makanan 2x sehari</td>
+          <td>Rp 50.000</td>
+        </tr>
+        <tr>
+          <td>Kandang Premium</td>
+          <td>AC, mainan, makanan 3x sehari</td>
+          <td>Rp 100.000</td>
+        </tr>
+        <tr>
+          <td>Kandang VIP</td>
+          <td>AC, mainan, makanan bebas, CCTV 24 jam</td>
+          <td>Rp 150.000</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <p><strong>Alamat:</strong> Jl. Paw No. 123, Kota Petville</p>
+      <p><strong>Telepon:</strong> 0812-3456-7890</p>
+      <p><strong>Email:</strong> info@pethotel.com</p>
+    </section>
+
+    <!-- FORM -->
+    <section id="pemilik">
+      <h2>Formulir Penitipan Hewan</h2>
+      <form>
+        <label>Nama Pemilik:</label>
+        <input type="text" name="nama_pemilik" required />
+
+        <label>Nama Hewan:</label>
+        <input type="text" name="nama_hewan" required />
+
+        <label>Jenis Hewan:</label>
+        <select name="jenis_hewan" required>
+          <option value="">-- Pilih --</option>
+          <option value="Kucing">Kucing</option>
+          <option value="Anjing">Anjing</option>
+          <option value="Burung">Burung</option>
+        </select>
+
+        <label>Tanggal Titip:</label>
+        <input type="date" name="tanggal_titip" required />
+
+        <label>Tanggal Ambil:</label>
+        <input type="date" name="tanggal_ambil" required />
+
+        <label>Catatan Khusus:</label>
+        <textarea name="catatan_khusus" rows="3"></textarea>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <p>🐾 Pet Hotel - Tempat Nyaman untuk Sahabat Tersayang</p>
+    <p>&copy; 2025 Pet Hotel. Semua Hak Dilindungi.</p>
+    <div class="social-icons">
+    
+
+<style>
+  footer {
+    background-color: #ffe6f0;
+    border-top: 2px solid #f7b2d9;
+    padding: 20px;
+    text-align: center;
+    color: #d63384;
+    margin-top: 40px;
+  }
+
+  footer .footer-container p {
+    margin: 5;
+  }
